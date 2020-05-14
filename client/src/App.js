@@ -16,6 +16,7 @@ class App extends Component {
       <div>
         <Navigation />
         <CitizenLogin />
+        <UserList />
       </div>
     )
 

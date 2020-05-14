@@ -7,7 +7,7 @@ class CitizenLogin extends Component {
         name: '',
         userName: '',
         password: '',
-        email: ''
+        email: '',
     }
 
     handleChange = ({ target }) => {
@@ -33,7 +33,7 @@ class CitizenLogin extends Component {
             method: 'POST',
             data: payload
         })
-            .then(() => {
+            .then((result) => {
                 console.log('Data sent successfully!');
                 this.resetUserInputs();
             })
@@ -53,7 +53,7 @@ class CitizenLogin extends Component {
 
     render() {
 
-        console.log('State: ', this.state.name);
+        console.log('State: ', this.state);
 
         return(
             <div>
