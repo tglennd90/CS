@@ -16,12 +16,24 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/name', (req, res) => {
-    const data = {
-        username: 'abdaily',
-        password: 'abdaily'
-    };
-    res.json(data);
+router.post('/save', (req, res) => {
+    console.log('Body: ', req.body);
+    const data = req.body;
+
+    const newUserPost = new UserPost(data);
+
+    newUserPost.save((error) => {
+        if (error) {
+            res.json({ msg: 'Sorry, internal errors while saving' });
+            return;
+        } 
+
+        return res.json({
+            msg: 'We received your data!'
+        })
+    });
+
+    
 });
 
 module.exports = router;

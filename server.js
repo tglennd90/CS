@@ -19,9 +19,13 @@ mongoose.connection.on('connected', () => {
     console.log('Mongoose: Connected'.green)
 });
 
+// Data Parsing
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 // HTTP Request Logger
 app.use(morgan('tiny'));
 
-app.use('/api', routes);
+app.use('/cs', routes);
 
 app.listen(PORT, console.log(`Server: http://localhost:${PORT}`.cyan));
