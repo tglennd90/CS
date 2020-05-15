@@ -12,7 +12,7 @@ class UserList extends Component {
     };
     
     getUserList = () => {
-        axios.get('/')
+        axios.get('/cs')
             .then((response) => {
                 const data = response.data;
                 this.setState({ users: data });

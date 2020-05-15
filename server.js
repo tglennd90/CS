@@ -30,7 +30,7 @@ if (process.env.NODE_ENV === 'production') {
 // HTTP Request Logger
 app.use(morgan('tiny'));
 
-app.use('/', routes);
+app.use('/cs', routes);
 
 
 app.listen(PORT, console.log(`Server: http://localhost:${PORT}`.cyan));
