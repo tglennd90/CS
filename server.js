@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 const colors = require('colors');
-const result = dotenv.config();
+require('dotenv').config()
 
 const app = express();
 
