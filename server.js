@@ -3,12 +3,15 @@ const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
 const colors = require('colors');
+const result = dotenv.config();
 
 const app = express();
 
 const PORT = process.env.PORT || 8080;
 
 const routes = require('./routes/api');
+
+console.log(process.env.MONGODB_URI)
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/citizen_service', {
     useNewUrlParser: true,
